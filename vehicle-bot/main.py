@@ -9,7 +9,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
 # Load Q&A data
 qa_data = []
-with open("vehicles_qa_text.jsonl", "r", encoding="utf-8") as f:
+with open("vehicle-bot/vehicles_qa_text.jsonl", "r", encoding="utf-8") as f:
     for line in f:
         qa_data.append(json.loads(line.strip()))
 
