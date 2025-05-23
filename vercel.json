@@ -1,7 +1,14 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/*.py", "use": "@vercel/python" }
+    {
+      "src": "api/generate.py",
+      "use": "@vercel/python",
+      "config": {
+        "installCommand": "pip install -r requirements.txt",
+        "includeFiles": ["vehicles_qa_text.jsonl"]
+      }
+    }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/$1.py" }
